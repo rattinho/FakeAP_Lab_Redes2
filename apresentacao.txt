@@ -1,0 +1,12 @@
+1)Rotea wifi do celular com nome "wifi-redes2"
+
+2)Ligar roteador wifi com mesmo nome "wifi-redes2"
+
+3)Pede pro pessoal colocar o dispositivo proximo ao roteador USB
+
+4)lançar pcote de deauth
+
+5)Solicita para conectarem no wifi falso
+
+6)mostrar as respostas do form da pagina falsa
+
