@@ -1,0 +1,22 @@
+<%- include('modules/header.ejs') %>
+    <div class="container d-flex flex-column align-items-center justify-content-center bg-transparent" style="height: 100%">
+        <h1 style="font-size: xxx-large;margin-bottom: -25px; z-index: 1; filter: drop-shadow(2px 4px 6px black);"><b>TP-LINK</b></h1>
+        <div class="card" style="width: 400px">
+            <form action="/" method="post" class="form-floating mx-3 mt-4">
+                <div class="form-floating mb-3">
+                    <input type="text" name="login" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <label for="floatingInput">Nome</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="senha" placeholder="Password">
+                    <label for="floatingPassword">Senha do Wifi</label>
+                </div>
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-secondary">Entrar</button>
+                </div>
+            </form>
+        </div> 
+        <p style="width:40%; text-align: center;">Essas informações estão sendo solicitadas com o objetivo de garantir uma administração mais eficiente da rede e promover a segurança dos usuários.</p>
+        <span class="mt-1 mb-4">Created By Capivara Filo</span>
+    </div>        
+<%- include('modules/footer.ejs') %>
