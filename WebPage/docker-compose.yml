@@ -1,0 +1,8 @@
+services:
+  fakeap:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./users:/app/users
+    

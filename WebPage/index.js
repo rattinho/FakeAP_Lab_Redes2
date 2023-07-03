@@ -2,7 +2,7 @@ const express = require("express")
 const fs = require("fs")
 const modRewrite = require('connect-modrewrite');
 
-const filename = "users.txt"
+const filename = __dirname+"/users/users.txt"
 
 app = express()
 app.set('trust proxy', true);
@@ -36,4 +36,4 @@ app.post('/', (req,res)=>{
 })
 
 
-app.listen(80, ()=>{console.log("escutando na porta 3000")})
+app.listen(80, ()=>{console.log("escutando na porta 80")})
