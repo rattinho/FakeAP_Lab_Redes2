@@ -1,6 +1,0 @@
-1)service NetworkManager stop
-2)dnsmasq -C dnsmasq.conf
-3)hostapd hostapd.conf
-4)ifconfig wlan0 10.0.0.1 netmask 255.255.255.0
-5)Adcionar os campos finais marcados por #FAKE AP do arquivo apache2-fakeap.conf para o arquivo /etc/apache2/apache2.conf
-6)service apache2 start

